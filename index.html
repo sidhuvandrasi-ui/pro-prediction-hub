@@ -2,306 +2,263 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>DG PREDICTION HUB</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
 <style>
-
 *{
+  box-sizing:border-box;
   margin:0;
   padding:0;
-  box-sizing:border-box;
 }
 
 body{
-  font-family:Inter,sans-serif;
-  background:#03060b;
-  color:#fff;
-  overflow-x:hidden;
-}
-
-/* Premium background glow */
-
-body:before,
-body:after{
-  content:"";
-  position:fixed;
-  width:330px;
-  height:330px;
-  border-radius:50%;
-  filter:blur(120px);
-  opacity:.28;
-  z-index:-1;
-}
-
-body:before{
-  background:#087cff;
-  top:-120px;
-  left:-120px;
-}
-
-body:after{
-  background:#00c8ff;
-  bottom:-120px;
-  right:-120px;
-}
-
-/* Hero */
-
-.hero{
   min-height:100vh;
-  padding:25px 18px 90px;
+  background:#020806;
+  color:#fff;
+  font-family:Arial,sans-serif;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
+  padding:22px 12px;
 }
 
-.hero-card{
+/* MAIN CARD */
+
+.card{
   width:100%;
-  max-width:520px;
-  padding:40px 24px;
+  max-width:430px;
+  min-height:720px;
+  padding:45px 25px 35px;
   text-align:center;
-
-  background:rgba(255,255,255,.045);
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:28px;
-
-  box-shadow:
-    0 25px 80px rgba(0,0,0,.55),
-    inset 0 1px rgba(255,255,255,.08);
-
-  backdrop-filter:blur(25px);
-}
-
-/* Badge */
-
-.badge{
-  display:inline-block;
-  padding:8px 15px;
   border-radius:30px;
 
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.8px;
+  background:
+    radial-gradient(circle at 50% 20%,
+    rgba(39,120,58,.13),
+    transparent 35%),
+    #03130b;
 
-  color:#8ed8ff;
+  border:1px solid rgba(177,190,36,.55);
 
-  background:rgba(0,153,255,.10);
-  border:1px solid rgba(0,153,255,.25);
+  box-shadow:
+    0 0 35px rgba(100,160,50,.08),
+    inset 0 0 40px rgba(0,0,0,.3);
 }
 
-/* Title */
+/* DG BADGE */
 
-.title{
-  margin-top:25px;
-  font-size:39px;
-  line-height:1.12;
-  font-weight:800;
+.logo{
+  width:150px;
+  height:150px;
+  margin:auto;
 
-  background:linear-gradient(
-    135deg,
-    #ffffff,
-    #69c8ff,
-    #ffffff
-  );
+  border-radius:50%;
 
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-/* Subtitle */
-
-.subtitle{
-  margin:18px auto 0;
-  max-width:420px;
-
-  color:#aeb8c5;
-  font-size:14px;
-  line-height:1.8;
-}
-
-/* Telegram button */
-
-.join-btn{
   display:flex;
   align-items:center;
   justify-content:center;
 
-  margin:30px auto 0;
-  width:100%;
-  max-width:340px;
+  font-size:42px;
+  font-weight:900;
+  letter-spacing:3px;
 
-  padding:17px 20px;
+  color:#f1c735;
+
+  background:
+    radial-gradient(circle,#183f25,#071b10);
+
+  border:5px solid #668c2c;
+
+  box-shadow:
+    0 0 20px rgba(145,190,55,.25),
+    inset 0 0 20px rgba(0,0,0,.5);
+}
+
+/* TITLE */
+
+h1{
+  margin-top:38px;
+
+  font-family:Georgia,serif;
+  font-size:39px;
+  line-height:1.15;
+  letter-spacing:2px;
+
+  color:#e6bd32;
+
+  text-shadow:0 0 15px rgba(220,180,40,.12);
+}
+
+/* DIVIDER */
+
+.line{
+  width:115px;
+  height:4px;
+  margin:25px auto;
+
+  border-radius:10px;
+  background:#b69a25;
+
+  box-shadow:0 0 10px rgba(200,170,40,.3);
+}
+
+/* TEXT */
+
+.heading{
+  font-size:20px;
+  font-weight:800;
+  margin-top:10px;
+}
+
+.sub{
+  margin-top:18px;
+
+  color:#a9b9ad;
+  font-size:17px;
+  font-weight:600;
+  line-height:1.6;
+}
+
+/* BUTTON */
+
+.join{
+  display:block;
+
+  width:100%;
+  margin-top:48px;
+  padding:21px 15px;
 
   border-radius:15px;
 
-  color:#fff;
   text-decoration:none;
-  font-size:15px;
-  font-weight:700;
+  color:#fff;
+
+  font-family:Georgia,serif;
+  font-size:21px;
+  font-weight:bold;
+  letter-spacing:2px;
 
   background:linear-gradient(
     135deg,
-    #008cff,
-    #0066ff
+    #0b6433,
+    #075b2e
   );
 
-  box-shadow:0 12px 35px rgba(0,120,255,.35);
+  border:1px solid #19824a;
 
-  transition:.3s;
+  box-shadow:
+    0 8px 25px rgba(0,100,45,.28);
+
+  transition:.25s;
 }
 
-.join-btn:hover{
+.join:hover{
   transform:translateY(-3px);
-  box-shadow:0 16px 40px rgba(0,140,255,.5);
+  box-shadow:
+    0 12px 35px rgba(0,140,65,.4);
 }
 
-.join-btn span{
-  margin-left:9px;
+.arrow{
+  color:#e8c53c;
+  font-size:28px;
+  margin-left:10px;
 }
 
-.trust{
-  margin-top:18px;
-  color:#687484;
+/* SMALL TEXT */
+
+.note{
+  margin-top:25px;
+
+  color:#87998d;
+  font-size:14px;
+  font-weight:600;
+}
+
+/* BOTTOM */
+
+.bottom{
+  margin-top:55px;
+
+  padding-top:22px;
+
+  border-top:1px solid rgba(180,180,50,.15);
+
+  color:#66766b;
   font-size:11px;
+  letter-spacing:1px;
 }
 
 @media(max-width:380px){
 
-  .title{
+  .card{
+    min-height:650px;
+    padding:35px 20px;
+  }
+
+  .logo{
+    width:125px;
+    height:125px;
+    font-size:35px;
+  }
+
+  h1{
     font-size:32px;
   }
 
-  .hero-card{
-    padding:32px 20px;
+  .heading{
+    font-size:18px;
+  }
+
+  .sub{
+    font-size:15px;
   }
 
 }
-
 </style>
 </head>
 
 <body>
 
-<section class="hero">
+<div class="card">
 
-  <div class="hero-card">
-
-    <div class="badge">
-      ✦ PREMIUM TELEGRAM COMMUNITY
-    </div>
-
-    <h1 class="title">
-      DG PREDICTION HUB
-    </h1>
-
-    <p class="subtitle">
-      Stay connected with real-time updates,
-      community discussions and a premium
-      Telegram experience.
-    </p>
-
-    <a
-      href="https://t.me/+RHpBZ0uYlfVjZWZl"
-      target="_blank"
-      class="join-btn"
-    >
-      🚀 JOIN TELEGRAM
-      <span>→</span>
-    </a>
-
-    <div class="trust">
-      🌍 Open to members worldwide
-    </div>
-
+  <div class="logo">
+    DG
   </div>
 
-</section><section style="padding:70px 18px;background:#050a12;">
+  <h1>
+    DG PREDICTION HUB
+  </h1>
 
-<div style="max-width:1000px;margin:auto;">
+  <div class="line"></div>
 
-<h2 style="text-align:center;font-size:30px;margin-bottom:35px;">
-Why Join DG?
-</h2>
+  <div class="heading">
+    Join To Get Premium Access
+  </div>
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;">
+  <div class="sub">
+    Get Daily Exclusive Insights ✨
+  </div>
 
-<div style="padding:28px 22px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);border-radius:22px;backdrop-filter:blur(18px);">
-<div style="font-size:32px;">⚡</div>
-<h3 style="margin-top:15px;">Fast Updates</h3>
-<p style="margin-top:10px;color:#9da8b7;font-size:13px;line-height:1.7;">
-Stay connected with the latest community updates.
-</p>
-</div>
+  <a
+    href="https://t.me/+RHpBZ0uYlfVjZWZl"
+    target="_blank"
+    class="join"
+  >
+    JOIN TELEGRAM
+    <span class="arrow">➤</span>
+  </a>
 
-<div style="padding:28px 22px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);border-radius:22px;backdrop-filter:blur(18px);">
-<div style="font-size:32px;">🌐</div>
-<h3 style="margin-top:15px;">Active Community</h3>
-<p style="margin-top:10px;color:#9da8b7;font-size:13px;line-height:1.7;">
-Connect with members and stay updated.
-</p>
-</div>
+  <div class="note">
+    Tap to open Telegram and join instantly
+  </div>
 
-<div style="padding:28px 22px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);border-radius:22px;backdrop-filter:blur(18px);">
-<div style="font-size:32px;">📲</div>
-<h3 style="margin-top:15px;">Easy Access</h3>
-<p style="margin-top:10px;color:#9da8b7;font-size:13px;line-height:1.7;">
-Join DG instantly through Telegram.
-</p>
-</div>
+  <div class="bottom">
+    DG PREDICTION HUB • PREMIUM COMMUNITY
+  </div>
 
 </div>
-
-</div>
-
-</section><section style="padding:70px 18px;">
-
-<div style="max-width:850px;margin:auto;text-align:center;">
-
-<div style="padding:40px 25px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:25px;backdrop-filter:blur(20px);">
-
-<h2 style="font-size:30px;">
-Ready to Join DG?
-</h2>
-
-<p style="margin:15px auto 0;color:#aeb8c5;font-size:14px;line-height:1.8;max-width:600px;">
-Join DG PREDICTION HUB on Telegram and stay connected with our growing community.
-</p>
-
-<a
-href="https://t.me/+RHpBZ0uYlfVjZWZl"
-target="_blank"
-class="join-btn"
-style="margin-top:25px;"
->
-🚀 JOIN DG TELEGRAM
-<span>→</span>
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<footer style="padding:35px 18px;text-align:center;border-top:1px solid rgba(255,255,255,.07);background:#02050a;">
-
-<h3 style="font-size:20px;">
-DG PREDICTION HUB
-</h3>
-
-<p style="margin-top:10px;color:#697585;font-size:11px;">
-Premium Telegram Community
-</p>
-
-<p style="margin-top:20px;color:#4f5966;font-size:11px;">
-© 2026 DG PREDICTION HUB. All Rights Reserved.
-</p>
-
-</footer>
 
 </body>
 </html>
