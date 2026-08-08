@@ -284,7 +284,78 @@ body{
 
 }
 
-</style>
+/* NEON EFFECTS */
+
+.card{
+  animation:cardGlow 4s ease-in-out infinite;
+}
+
+@keyframes cardGlow{
+  0%,100%{
+    box-shadow:
+      0 20px 60px rgba(0,0,0,.65),
+      0 0 20px rgba(80,150,40,.08);
+  }
+  50%{
+    box-shadow:
+      0 20px 60px rgba(0,0,0,.65),
+      0 0 40px rgba(100,180,50,.22);
+  }
+}
+
+/* LOGO NEON */
+
+.logo{
+  animation:logoNeon 2.8s ease-in-out infinite;
+}
+
+@keyframes logoNeon{
+  0%,100%{
+    box-shadow:
+      0 0 0 5px rgba(110,140,40,.08),
+      0 0 22px rgba(110,150,45,.25);
+  }
+  50%{
+    box-shadow:
+      0 0 0 7px rgba(160,190,50,.10),
+      0 0 42px rgba(160,200,55,.50);
+  }
+}
+
+/* TITLE GLOW */
+
+.title{
+  animation:titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow{
+  0%,100%{
+    text-shadow:0 0 5px rgba(230,190,45,.15);
+  }
+  50%{
+    text-shadow:
+      0 0 10px rgba(230,190,45,.55),
+      0 0 25px rgba(230,190,45,.25);
+  }
+}
+
+/* BUTTON NEON */
+
+.join{
+  animation:buttonNeon 2s ease-in-out infinite;
+}
+
+@keyframes buttonNeon{
+  0%,100%{
+    box-shadow:
+      0 8px 22px rgba(0,100,45,.25);
+  }
+  50%{
+    box-shadow:
+      0 8px 30px rgba(0,150,65,.50),
+      0 0 22px rgba(0,150,65,.25);
+  }
+}</style>
 </head>
 
 <body>
