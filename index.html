@@ -3,134 +3,189 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
 <title>DG PREDICTION HUB</title>
 
 <style>
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
+  box-sizing:border-box;
 }
 
 body{
   min-height:100vh;
-  background:#020806;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+  background:
+    radial-gradient(circle at 50% 10%,#173c20 0,#06140b 32%,#010403 75%);
   color:#fff;
   font-family:Arial,sans-serif;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:22px 12px;
+  overflow-x:hidden;
 }
 
-/* MAIN CARD */
+/* background glow */
+body:before{
+  content:"";
+  position:fixed;
+  width:320px;
+  height:320px;
+  border-radius:50%;
+  background:#78a72d;
+  filter:blur(130px);
+  opacity:.15;
+  animation:glow 5s ease-in-out infinite alternate;
+}
 
+@keyframes glow{
+  from{transform:scale(.8);}
+  to{transform:scale(1.25);}
+}
+
+/* main card */
 .card{
+  position:relative;
   width:100%;
   max-width:430px;
   min-height:720px;
-  padding:45px 25px 35px;
+  padding:42px 24px 30px;
   text-align:center;
+  overflow:hidden;
+
+  background:linear-gradient(
+    145deg,
+    rgba(7,35,18,.97),
+    rgba(2,13,8,.99)
+  );
+
+  border:1px solid rgba(190,184,55,.65);
   border-radius:30px;
 
-  background:
-    radial-gradient(circle at 50% 20%,
-    rgba(39,120,58,.13),
-    transparent 35%),
-    #03130b;
-
-  border:1px solid rgba(177,190,36,.55);
-
   box-shadow:
-    0 0 35px rgba(100,160,50,.08),
-    inset 0 0 40px rgba(0,0,0,.3);
+    0 0 35px rgba(120,160,45,.15),
+    0 25px 70px rgba(0,0,0,.7),
+    inset 0 0 35px rgba(120,170,50,.04);
 }
 
-/* DG BADGE */
+/* light sweep */
+.card:after{
+  content:"";
+  position:absolute;
+  width:70%;
+  height:1px;
+  top:0;
+  left:-80%;
+  background:#e0c536;
+  box-shadow:0 0 15px #e0c536;
+  animation:sweep 4s linear infinite;
+}
 
+@keyframes sweep{
+  0%{left:-80%;}
+  50%,100%{left:120%;}
+}
+
+/* DG logo */
 .logo{
-  width:150px;
-  height:150px;
+  position:relative;
+  width:155px;
+  height:155px;
   margin:auto;
-
-  border-radius:50%;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  font-size:42px;
+  border-radius:50%;
+  color:#f3cf3d;
+  font-size:44px;
   font-weight:900;
-  letter-spacing:3px;
+  letter-spacing:4px;
 
-  color:#f1c735;
+  background:radial-gradient(
+    circle,
+    #1c4b29,
+    #06170c
+  );
 
-  background:
-    radial-gradient(circle,#183f25,#071b10);
-
-  border:5px solid #668c2c;
+  border:5px solid #7b972d;
 
   box-shadow:
-    0 0 20px rgba(145,190,55,.25),
-    inset 0 0 20px rgba(0,0,0,.5);
+    0 0 0 7px rgba(130,160,45,.08),
+    0 0 35px rgba(170,190,55,.35),
+    inset 0 0 25px rgba(0,0,0,.7);
+
+  animation:pulse 3s infinite;
 }
 
-/* TITLE */
+@keyframes pulse{
+  50%{
+    box-shadow:
+      0 0 0 11px rgba(130,160,45,.05),
+      0 0 50px rgba(180,200,60,.5),
+      inset 0 0 25px rgba(0,0,0,.7);
+  }
+}
 
+/* title */
 h1{
-  margin-top:38px;
-
+  margin-top:35px;
   font-family:Georgia,serif;
-  font-size:39px;
+  font-size:37px;
   line-height:1.15;
   letter-spacing:2px;
+  color:#e7c43b;
 
-  color:#e6bd32;
-
-  text-shadow:0 0 15px rgba(220,180,40,.12);
+  text-shadow:
+    0 0 10px rgba(235,195,55,.4),
+    0 0 25px rgba(235,195,55,.12);
 }
 
-/* DIVIDER */
-
+/* divider */
 .line{
-  width:115px;
+  width:125px;
   height:4px;
-  margin:25px auto;
+  margin:24px auto;
 
   border-radius:10px;
-  background:#b69a25;
 
-  box-shadow:0 0 10px rgba(200,170,40,.3);
+  background:linear-gradient(
+    90deg,
+    transparent,
+    #d8bb32,
+    transparent
+  );
+
+  box-shadow:0 0 12px rgba(220,190,40,.5);
 }
 
-/* TEXT */
-
+/* text */
 .heading{
   font-size:20px;
   font-weight:800;
-  margin-top:10px;
 }
 
 .sub{
-  margin-top:18px;
-
-  color:#a9b9ad;
-  font-size:17px;
+  margin-top:15px;
+  color:#aebdb2;
+  font-size:16px;
   font-weight:600;
   line-height:1.6;
 }
 
-/* BUTTON */
-
+/* button */
 .join{
-  display:block;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
   width:100%;
-  margin-top:48px;
-  padding:21px 15px;
+  margin-top:43px;
+  padding:20px 12px;
 
-  border-radius:15px;
+  border-radius:16px;
 
   text-decoration:none;
   color:#fff;
@@ -142,69 +197,99 @@ h1{
 
   background:linear-gradient(
     135deg,
-    #0b6433,
-    #075b2e
+    #08763c,
+    #07552c,
+    #08763c
   );
 
-  border:1px solid #19824a;
+  border:1px solid #2b9a5b;
 
   box-shadow:
-    0 8px 25px rgba(0,100,45,.28);
+    0 9px 28px rgba(0,120,55,.38),
+    0 0 20px rgba(0,140,65,.12);
 
-  transition:.25s;
+  overflow:hidden;
+
+  animation:buttonPulse 2.5s infinite;
 }
 
 .join:hover{
   transform:translateY(-3px);
-  box-shadow:
-    0 12px 35px rgba(0,140,65,.4);
+}
+
+.join:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:55%;
+  height:100%;
+
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.28),
+    transparent
+  );
+
+  transform:skewX(-20deg);
+  animation:shine 3s infinite;
+}
+
+@keyframes shine{
+  0%{left:-100%;}
+  45%,100%{left:140%;}
+}
+
+@keyframes buttonPulse{
+  50%{
+    box-shadow:
+      0 12px 38px rgba(0,150,65,.5),
+      0 0 25px rgba(0,150,65,.15);
+  }
 }
 
 .arrow{
-  color:#e8c53c;
-  font-size:28px;
-  margin-left:10px;
+  margin-left:12px;
+  color:#f0cb38;
+  font-size:27px;
 }
 
-/* SMALL TEXT */
-
+/* note */
 .note{
-  margin-top:25px;
-
+  margin-top:23px;
   color:#87998d;
-  font-size:14px;
+  font-size:13px;
   font-weight:600;
 }
 
-/* BOTTOM */
-
+/* bottom info */
 .bottom{
-  margin-top:55px;
+  margin-top:48px;
+  padding-top:20px;
+  border-top:1px solid rgba(190,180,50,.15);
 
-  padding-top:22px;
-
-  border-top:1px solid rgba(180,180,50,.15);
-
-  color:#66766b;
-  font-size:11px;
+  color:#68766d;
+  font-size:10px;
   letter-spacing:1px;
 }
 
+/* mobile */
 @media(max-width:380px){
 
   .card{
     min-height:650px;
-    padding:35px 20px;
+    padding:32px 19px;
   }
 
   .logo{
-    width:125px;
-    height:125px;
-    font-size:35px;
+    width:130px;
+    height:130px;
+    font-size:36px;
   }
 
   h1{
-    font-size:32px;
+    font-size:31px;
   }
 
   .heading{
@@ -215,6 +300,9 @@ h1{
     font-size:15px;
   }
 
+  .join{
+    font-size:19px;
+  }
 }
 </style>
 </head>
